@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Race Briefings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --text: #334155;
+      --text-light: #94a3b8;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --radius: 10px;
+      --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 0.75rem; box-shadow: var(--shadow); }
+    .header .logo { font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .header .logo:hover { text-decoration: none; color: var(--primary); }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .page-title { margin-bottom: 2rem; }
+    .page-title h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.25rem; }
+    .page-title p { color: var(--text-light); font-size: 1.05rem; }
+
+    .race-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+    .race-card {
+      background: var(--bg-card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 1.5rem; transition: box-shadow 0.2s, transform 0.2s;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .race-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); text-decoration: none; }
+    .race-card .race-date { font-size: 0.85rem; color: var(--primary); font-weight: 600; }
+    .race-card .race-name { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+    .race-card .race-desc { font-size: 0.9rem; color: var(--text-light); flex: 1; }
+    .race-card .race-link { font-size: 0.9rem; font-weight: 600; margin-top: 0.5rem; }
+    .race-card.coming-soon { opacity: 0.6; pointer-events: none; }
+    .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; background: var(--primary); color: white; }
+
+    footer { text-align: center; padding: 2rem; color: var(--text-light); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="./index.html" class="logo">🚣 Race Briefings</a>
+  </header>
+
+  <div class="container">
+    <div class="page-title">
+      <h1>Race Briefings</h1>
+      <p>Historical results, competitor analysis, and race intel</p>
+    </div>
+
+    <div class="race-grid">
+      <a href="./pairs-head-2026.html" class="race-card">
+        <div class="race-date">October 2026</div>
+        <div class="race-name">Pairs Head 2026</div>
+        <div class="race-desc">4,500m Tideway heads race. 8 categories with Quintin crews. Historical results 2019–2024, competitor analysis, and targets.</div>
+        <div class="race-link">View briefing →</div>
+      </a>
+
+      <div class="race-card coming-soon">
+        <div class="race-date">November 2026</div>
+        <div class="race-name">Scullers Head 2026</div>
+        <div class="race-desc">4,250m Tideway heads race for single sculls.</div>
+        <div class="race-link">Coming soon</div>
+      </div>
+
+      <div class="race-card coming-soon">
+        <div class="race-date">March 2027</div>
+        <div class="race-name">Head of the River</div>
+        <div class="race-desc">6,800m Tideway championship course.</div>
+        <div class="race-link">Coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Race Briefings · Chiswick Sculling Ladder</p>
+  </footer>
+</body>
+</html>
